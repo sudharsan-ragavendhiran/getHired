@@ -1,0 +1,53 @@
+@import "../../scss/SassVariables.scss";
+
+.orgImg {
+  width: 50px;
+  height: 50px;
+  display: inline-block;
+  margin-right: 10px;
+}
+.orgSection {
+  display: flex;
+  align-items: center;
+  margin: 5px 5px;
+}
+
+.eventCard {
+  margin: 0rem 0.5rem 2.5rem 1rem;
+  width: 270px;
+  margin-top: 30px;
+}
+
+.eventDesc {
+  margin: 5px 5px;
+  font-size: 1.8rem;
+}
+
+.eventDetails {
+  margin: 5px 5px;
+  font-size: 1.7rem;
+}
+
+.eventDeadline {
+  margin: 5px 5px;
+  font-size: 0.8rem;
+}
+
+.divider {
+  height: 1px;
+  background-color: lightgrey;
+}
+
+.btn_apply {
+  background-color: #D41A2B;
+  border-radius: 10px;
+  width: 100%;
+  height: 2.6rem;
+  color: $white-color;
+  font-size: 15px;
+}
+
+.apply {
+  margin: 5px auto;
+  text-align: center;
+}

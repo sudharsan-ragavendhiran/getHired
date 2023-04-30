@@ -1,0 +1,11 @@
+@import "../../../scss/SassVariables.scss";
+
+.skillChip {
+  display: inline-block;
+  background-color: $white-color;
+  border: 1px solid $grey;
+  color: $blue-color;
+  padding: 5px;
+  border-radius: 20px;
+  margin: 10px;
+}

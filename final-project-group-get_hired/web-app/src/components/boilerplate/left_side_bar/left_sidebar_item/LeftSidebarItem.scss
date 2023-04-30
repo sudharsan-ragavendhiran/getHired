@@ -1,0 +1,26 @@
+@import "../../../../scss/SassVariables.scss";
+
+
+.leftSidebarItem {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px;
+}
+
+.leftSidebarItem-categoryName {
+  color: $grey;
+  font-weight: bold;
+  margin: 5px;
+  font-size: 14px;
+}
+.leftSidebarItem-numOfJobs {
+  width: 70px;
+  height: 30px;
+  border-radius: 20px;
+  background-color: $blue-color;
+  display: flex;
+  margin: 5px;
+  justify-content: center;
+  align-items: center;
+  color: $white-color;
+}

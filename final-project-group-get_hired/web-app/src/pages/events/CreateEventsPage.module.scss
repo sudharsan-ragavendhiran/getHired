@@ -1,0 +1,39 @@
+@import "../../scss/SassVariables.scss";
+
+.createEventCard {
+  position: relative;
+  width: calc(100% - 2rem);
+  height: calc(100vh - 2rem);
+  padding: 3rem;
+  margin: 0rem 2rem 0rem 1rem;
+  box-shadow: 5px 5px 5px 5px $grey;
+}
+
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.formInputs,
+.MuiFormControl-root-MuiTextField-root,
+.MuiInputBase-input-MuiOutlinedInput-input {
+  margin-top: 1rem;
+  width: 60%;
+  font-size: 2rem;
+}
+
+.formBtn{
+  margin: 1rem;
+  background-color: $blue-color;
+  color: $white-color;
+  font-weight: bold;
+}
+
+.formBtn:hover {
+  border: 1px solid $blue-color;
+  color: $blue-color;
+  background-color: $white-color;
+}

@@ -1,0 +1,16 @@
+@import "../../../scss/SassVariables.scss";
+
+.card {
+  border-radius: 0.5rem;
+  background-color: $white-color;
+  box-shadow: 2px 20px 30px gainsboro;
+  padding: 1rem 1rem 1rem 1rem;
+  
+}
+.cardTest {
+  border-radius: 0.5rem;
+  background-color: #D41A2B;
+  box-shadow: 2px 2px 30px gainsboro;
+  padding: 1rem 1rem 1rem 1rem;
+  margin-top: -30px;
+}

@@ -1,0 +1,77 @@
+@import "../../scss/SassVariables.scss";
+//styles for student and rcruiter dashbooard
+.applications-section-header {
+  color: #545457;
+  margin: 10px;
+  display: flex;
+}
+.bar-chart{
+    display: block;
+    box-sizing: border-box;
+    height: 40%;
+    width: 90%;
+    padding-bottom: 0;
+    position: relative;
+    left: 5%;
+}
+.nav:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.navigation{
+  position: relative;
+  left: 45%;
+}
+.nav {
+  background-color: #D41A2B;
+  color: white;
+   border-radius: 50%;
+   text-decoration: none;
+  display: inline-block;
+  padding: 8px 16px;
+}
+.heading {
+  font-family: 'Barlow Semi Condensed', sans-serif;
+  font-weight: 700;
+  line-height: 1.167;
+  letter-spacing: -0.01562em;
+  font-size: 28px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+.h_line {
+  width: 100%;
+  height: 1px;
+  background: rgb(112, 110, 110);
+  content: "";
+}
+
+.view-more {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  button {
+    // text-transform: uppercase;
+    letter-spacing: 1px;
+    border: none;
+    background: #D41A2B;
+    color: #fff;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-right: 20px;
+    // font-family: inherit;
+    // font-weight: 700;
+    width: 100px;
+
+    padding: 5px;
+    // font-size: inherit;
+  }
+}
+
+.card-margin {
+  margin: 0rem 1rem 0rem 1rem;
+  height: calc(100% + 4.5rem);
+  overflow-y: scroll;
+}

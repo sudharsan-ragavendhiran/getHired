@@ -1,0 +1,61 @@
+@import "../../scss/SassVariables.scss";
+
+.eventsContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  // overflow: scroll;
+}
+
+.headContainer {
+  display: flex;
+  width: 100%;
+}
+
+.searchContainer {
+  flex: 5;
+  margin-right: 2rem;
+}
+.btnContainer {
+  flex: 1;
+  margin-left: 2rem;
+}
+
+.crEvntBtn {
+  color: $base-color;
+  background-color: $blue-color;
+  color: $white-color;
+  height: 3rem;
+  line-height: 1;
+}
+
+.crEvntBtn:hover {
+  background-color: $white-color;
+  border: 1px solid $blue-color;
+  color: $blue-color;
+  height: 3rem;
+  padding: 0;
+}
+
+.filterWrapper{
+  margin-bottom: 15px;
+}
+
+.filterTypeWrapper{
+  //height: 115px;
+  height: 170px;
+  width: 370px;
+  // overflow-y:scroll;//new
+  position: absolute;
+  right:776px;
+}
+.jobContainerWrapper{
+  height: 95%;
+  // overflow-y: scroll;
+  margin-top: 125px;//new to change direction
+}
+.jobsContainer{
+  display:flex;
+  flex-direction:row;
+  flex-wrap: wrap;
+}

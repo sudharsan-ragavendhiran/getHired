@@ -1,0 +1,65 @@
+.orgImg {
+    width:50px;
+    height:50px;
+    display: inline-block;
+    margin-right: 10px;
+}
+.orgSection{
+ display :flex;
+ align-items: center;
+ margin: 5px 5px;
+}
+
+.jobDetailCard {
+    margin : 0rem 0.5rem 0.5rem 1rem;
+    margin-top: 10px;
+}
+
+.jobTitle{
+    font-size: 1.5rem;
+    margin: 5px 5px;
+}
+
+.jobDetails{
+    margin: 5px 5px;
+    font-size: 1rem ;
+}
+
+.jobDeadline{
+    margin: 5px 5px;
+    font-size: 1rem;
+}
+
+.sectionTitle{
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.divider{
+    height:1px;
+    background-color: lightgrey;
+}
+
+.jobDesc{
+    margin: 1rem 0rem 1rem 0rem;
+}
+
+.jobResp{
+    margin: 1rem 0rem 1rem 0rem;
+}
+
+.mainContainer{
+    display: flex;
+    flex-direction: column;
+}
+
+.jobsContainer{
+    display:flex;
+    flex-direction:row;
+    flex-wrap: nowrap;
+}
+
+.moreJobsTitle{
+    margin : 1rem 0.5rem 0.5rem 1rem;
+    font-weight: bold;
+}

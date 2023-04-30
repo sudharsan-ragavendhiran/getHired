@@ -1,0 +1,56 @@
+@import "../../scss/SassVariables.scss";
+
+.orgImg {
+  width: 50px;
+  height: 50px;
+  display: inline-block;
+  margin-right: 10px;
+}
+.orgSection {
+  display: flex;
+  align-items: center;
+  margin: 5px 5px;
+}
+
+.jobCard {
+  margin: 0rem 0.5rem 0.5rem 1rem;
+  width: 270px;
+}
+
+.jobDesc {
+  margin: 5px 5px;
+  font-size: 1.2rem;
+}
+
+.jobDetails {
+  margin: 5px 5px;
+  font-size: 1.2rem;
+}
+
+.jobDeadline {
+  margin: 5px 5px;
+  font-size: 1.2rem;
+}
+
+.divider {
+  height: 1px;
+  background-color: lightgrey;
+}
+
+.btn_apply {
+  background-color: #D41A2B;
+  border-radius: 10px;
+  width: 100%;
+  height: 1.8rem;
+  color: $white-color;
+  cursor: pointer;
+}
+.btn_apply :hover{
+  background-color: rgb(212, 26, 43, 0.5);
+  cursor: pointer;
+}
+
+.apply {
+  margin: 5px auto;
+  text-align: center;
+}

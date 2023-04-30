@@ -1,0 +1,43 @@
+@import "../../scss/SassVariables.scss";
+
+.orgHeader {
+  display: flex;
+  width: 30%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.orgLogo {
+  width: 24rem;
+  height: 12rem;
+}
+
+.orgName {
+  font-size: 5em;
+}
+
+.orgAboutus {
+  font-size: 2em;
+  margin-left: 1rem;
+}
+
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+  height: 100%;
+  margin-left: 1rem;
+  margin-top: 10px;
+}
+
+.jobsContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  width: 100%;
+}
+
+.moreTitle {
+  margin: 1rem 0.5rem 0.5rem 1rem;
+  font-weight: bold;
+}

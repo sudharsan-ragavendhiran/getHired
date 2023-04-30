@@ -1,0 +1,1467 @@
+openapi: 3.0.3
+info: 
+  title: Job API
+  description: Job API can be used for managing Jobs
+  version: 1.0.0
+paths: 
+  /organizations:
+      #post method to add organization
+      post:
+        summary: Add an organization
+        requestBody:
+          required: true
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/organization'
+        responses:
+          '200':
+            description: Success
+            content:
+              application/json:
+                schema:
+                  $ref: '#/components/schemas/organization'
+          '400':
+            description: Bad Request
+            content:
+              application/json:
+                schema:
+                  $ref: '#/components/schemas/Error'
+          '401':
+            description: Authorization information is missing
+            content:
+              application/json:
+                schema:
+                  $ref: '#/components/schemas/Error'
+      #method to get all organizations
+      get:
+        summary: Get all Organizations
+        responses:
+          '200':
+            description: A list of all Organizations
+            content:
+              application/json:
+                schema:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/organization'
+          '400':
+            description: Bad Request
+            content:
+              application/json:
+                schema:
+                  $ref: '#/components/schemas/Error'
+          '401':
+            description: Authorization information is missing
+            content:
+              application/json:
+                schema:
+                  $ref: '#/components/schemas/Error'
+  /organizations/{organization_id}:
+      parameters:
+        - name: organization_id
+          in: path
+          required: true
+          description: The ID of the organizations
+          schema:
+            type: string
+      #To get organization details by specifing the id
+      get:
+        summary: Get an organizations by ID
+        responses:
+          '200':
+            description: success
+            content:
+              application/json:
+                schema:
+                  $ref: '#/components/schemas/organizationUpdate'
+          '400':
+            description: Bad Request
+            content:
+              application/json:
+                schema:
+                  $ref: '#/components/schemas/Error'
+          '401':
+            description: Authorization information is missing
+            content:
+              application/json:
+                schema:
+                  $ref: '#/components/schemas/Error'
+      #To update organization details by specifing the id    
+      put:
+        summary: Update an organizations by ID
+        requestBody:
+          required: true
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/organizationUpdate'
+        responses:
+          '200':
+            description: success
+            content:
+              application/json:
+                schema:
+                  $ref: '#/components/schemas/organizationUpdate'
+          '400':
+            description: Bad Request
+            content:
+              application/json:
+                schema:
+                  $ref: '#/components/schemas/Error'
+          '401':
+            description: Authorization information is missing
+            content:
+              application/json:
+                schema:
+                  $ref: '#/components/schemas/Error'
+      #To delete organization details by specifing the id
+      delete:
+        summary: Delete an organizations by ID
+        responses:
+          '200':
+            description: The deleted organizations
+            content:
+              application/json:
+                schema:
+                  $ref: '#/components/schemas/organizationUpdate'
+          '400':
+            description: Bad Request
+            content:
+              application/json:
+                schema:
+                  $ref: '#/components/schemas/Error'
+          '401':
+            description: Authorization information is missing
+            content:
+              application/json:
+                schema:
+                  $ref: '#/components/schemas/Error'
+  /jobs:
+      #post method to add job
+      post:
+        summary: Add a job
+        requestBody:
+          required: true
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/jobs'
+        responses:
+          '200':
+            description: success
+            content:
+              application/json:
+                schema:
+                  $ref: '#/components/schemas/jobs'
+          '400':
+            description: Bad Request
+            content:
+              application/json:
+                schema:
+                  $ref: '#/components/schemas/Error'
+          '401':
+            description: Authorization information is missing
+            content:
+              application/json:
+                schema:
+                  $ref: '#/components/schemas/Error'
+      #method to get all jobs
+      get:
+        summary: Get all jobs
+        responses:
+          '200':
+            description: A list of all jobs
+            content:
+              application/json:
+                schema:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/jobs'
+          '400':
+            description: Bad Request
+            content:
+              application/json:
+                schema:
+                  $ref: '#/components/schemas/Error'
+          '401':
+            description: Authorization information is missing
+            content:
+              application/json:
+                schema:
+                  $ref: '#/components/schemas/Error'             
+  /jobs/{job_id}:
+      parameters:
+        - name: job_id
+          in: path
+          required: true
+          description: The ID of the job
+          schema:
+            type: string
+      #To get job details by specifing the id
+      get:
+        summary: Get an job by ID
+        responses:
+          '200':
+            description: Success
+            content:
+              application/json:
+                schema:
+                  $ref: '#/components/schemas/updateJobs'
+          '400':
+            description: Bad Request
+            content:
+              application/json:
+                schema:
+                  $ref: '#/components/schemas/Error'
+          '401':
+            description: Authorization information is missing
+            content:
+              application/json:
+                schema:
+                  $ref: '#/components/schemas/Error'
+      #To update job details by specifing the id   
+      put:
+        summary: Update an job by ID
+        requestBody:
+          required: true
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/updateJobs'
+        responses:
+          '200':
+            description: The updated job
+            content:
+              application/json:
+                schema:
+                  $ref: '#/components/schemas/updateJobs'
+          '400':
+            description: Bad Request
+            content:
+              application/json:
+                schema:
+                  $ref: '#/components/schemas/Error'
+          '401':
+            description: Authorization information is missing
+            content:
+              application/json:
+                schema:
+                  $ref: '#/components/schemas/Error'
+      #To delete job details by specifing the id    
+      delete:
+        summary: Delete an job by ID
+        responses:
+          '200':
+            description: Success
+            content:
+              application/json:
+                schema:
+                  $ref: '#/components/schemas/updateJobs'
+          '400':
+            description: Bad Request
+            content:
+              application/json:
+                schema:
+                  $ref: '#/components/schemas/Error'
+          '401':
+            description: Authorization information is missing
+            content:
+              application/json:
+                schema:
+                  $ref: '#/components/schemas/Error'
+  /registrations:
+    post:
+      summary: Add a registration
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+             #registration component referred
+              $ref: "#/components/schemas/registration"
+      #responses
+      responses:
+        "200":
+          description: Registration successfully added
+          content:
+            application/json:
+              schema:
+              #registration component referred
+                $ref: "#/components/schemas/registration"
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+              #Error component referred
+                $ref: "#/components/schemas/Error"
+        "401":
+          description: Authorization information is missing
+          content:
+            application/json:
+              schema:
+              #Error component referred
+                $ref: "#/components/schemas/Error"
+    #Get path specified 
+    #Get all registrations
+    get:
+      summary: Get all registrations
+      responses:
+        "200":
+          description: A list of all registrations
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                 #registrations component referred
+                  $ref: "#/components/schemas/registrations"
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+               #error component referred
+                $ref: "#/components/schemas/Error"
+        "401":
+          description: Authorization information is missing
+          content:
+            application/json:
+              schema:
+               #error component referred
+                $ref: "#/components/schemas/Error"
+  #To get a student registration details by specifing the id
+  /registrations/{student_id}:
+    parameters:
+      - name: student_id
+        in: path
+        required: true
+        description: The ID of the student
+        schema:
+          type: string
+    #Get student registration details
+    get:
+      summary: Get registration details of a student by ID
+      responses:
+        "200":
+          description: The student with the specified ID
+          content:
+            application/json:
+              schema:
+              #registration component referred
+                $ref: "#/components/schemas/registration"
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+              #error component referred
+                $ref: "#/components/schemas/Error"
+        "401":
+          description: Authorization information is missing
+          content:
+            application/json:
+              schema:
+              #error component referred
+                $ref: "#/components/schemas/Error"
+    #Update registration details
+    put:
+      summary: Update registration details by student ID
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+            #registration component referred
+              $ref: "#/components/schemas/registration"
+      responses:
+        "200":
+          description: Registration details updated successfully
+          content:
+            application/json:
+              schema:
+              #Error component referred
+                $ref: "#/components/schemas/registration"
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+              #Error component referred
+                $ref: "#/components/schemas/Error"
+        "401":
+          description: Authorization information is missing
+          content:
+            application/json:
+              schema:
+              #Error component referred
+                $ref: "#/components/schemas/Error"
+    #To delete a registration
+    delete:
+      summary: Delete a registration by ID
+      responses:
+        "200":
+          description: Registration deleted successfullly
+          content:
+            application/json:
+              schema:
+                type: object
+        "404":
+          description: "The student with the specified ID was not found"
+          content:
+            application/json:
+              schema:
+              #Error component referred
+                $ref: "#/components/schemas/Error"
+        "500":
+          description: "An error occurred while deleting the student"
+          content:
+            application/json:
+              schema:
+              #Error component referred
+                $ref: "#/components/schemas/Error"
+  /projects:
+    post:
+      summary: Add a project
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+             #project component referred
+              $ref: "#/components/schemas/project"
+      #responses
+      responses:
+        "200":
+          description: Project successfully added
+          content:
+            application/json:
+              schema:
+              #project component referred
+                $ref: "#/components/schemas/project"
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+              #error component referred
+                $ref: "#/components/schemas/Error"
+        "401":
+          description: Authorization information is missing
+          content:
+            application/json:
+              schema:
+              #error component referred
+                $ref: "#/components/schemas/Error"
+    get:
+    #Get method to Get list of all projects
+      summary: Get all projects
+      responses:
+        "200":
+          description: A list of all projects
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                #project component referred
+                  $ref: "#/components/schemas/projects"
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+              #error component referred
+                $ref: "#/components/schemas/Error"
+        "401":
+          description: Authorization information is missing
+          content:
+            application/json:
+              schema:
+              #error component referred
+                $ref: "#/components/schemas/Error"
+  /projects/{id}:
+    parameters:
+      - name: id
+        in: path
+        required: true
+        description: The ID of the project
+        schema:
+          type: string
+    #Get all project details by ID
+    get:
+      summary: Get project details by ID
+      #Responses
+      responses:
+        "200":
+          description: The project with the specified ID
+          content:
+            application/json:
+              schema:
+              #project component referred
+                $ref: "#/components/schemas/project"
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+              #error component referred
+                $ref: "#/components/schemas/Error"
+        "401":
+          description: Authorization information is missing
+          content:
+            application/json:
+              schema:
+              #error component referred
+                $ref: "#/components/schemas/Error"
+    #Put - To update project details by project Id
+    put:
+      summary: Update project details by project ID
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+            #project component referred
+              $ref: "#/components/schemas/project"
+      #responses
+      responses:
+        "200":
+          description: Project details updated successfully
+          content:
+            application/json:
+              schema:
+              #project component referred
+                $ref: "#/components/schemas/project"
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+              #error component referred
+                $ref: "#/components/schemas/Error"
+        "401":
+          description: Authorization information is missing
+          content:
+            application/json:
+              schema:
+              #error component referred
+                $ref: "#/components/schemas/Error"
+    #To delete a project
+    delete:
+      summary: Delete a project by ID
+      responses:
+        "200":
+          description: Project deleted successfullly
+          content:
+            application/json:
+              schema:
+                type: object
+        "404":
+          description: "The project with the specified ID was not found"
+          content:
+            application/json:
+              schema:
+              #error component referred
+                $ref: "#/components/schemas/Error"
+        "500":
+          description: "An error occurred while deleting the student"
+          content:
+            application/json:
+              schema:
+              #error component referred
+                $ref: "#/components/schemas/Error"
+  /applications:
+    post:
+      summary: Add a application
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Application"
+      responses:
+        "200":
+          description: The added application
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Application"
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                type: object
+        "401":
+          description: Authorization information is missing
+          content:
+            application/json:
+              schema:
+                type: object
+    # Get method to get all applications
+    get:
+      summary: Get all applications
+      responses:
+        "200":
+          description: A list of all students
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Application"
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                type: object
+        "401":
+          description: Authorization information is missing
+          content:
+            application/json:
+              schema:
+                type: object
+  /applications/{student_id}:
+    parameters:
+      - name: student_id
+        in: path
+        required: true
+        description: The ID of the student
+        schema:
+          type: string
+    # Get method to get the application details by student id
+    get:
+      summary: Get an application by student ID
+      responses:
+        "200":
+          description: The student with the specified ID
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Application"
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                type: object
+        "401":
+          description: Authorization information is missing
+          content:
+            application/json:
+              schema:
+                type: object
+        # Put method to update the application id
+    put:
+      summary: Update an application by ID
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Application"
+      responses:
+        "200":
+          description: The updated application
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Application"
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                type: object
+        "401":
+          description: Authorization information is missing
+          content:
+            application/json:
+              schema:
+                type: object
+      # delete application
+    delete:
+      summary: Delete an application
+      responses:
+        "200":
+          description: The deleted application
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Application"
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                type: object
+        "401":
+          description: Authorization information is missing
+          content:
+            application/json:
+              schema:
+                type: object
+  /recruiter:
+      #post method to add a recruiter           
+      post:
+        summary: Add a recruiter
+        requestBody:
+          required: true
+          content:
+            application/json:
+              schema:
+               #recruiter component referred
+                $ref: '#/components/schemas/recruiter'
+         #responses       
+        responses:
+          '200':
+            description: The added recruiter
+            content:
+              application/json:
+                schema:
+                #recruiter component referred
+                  $ref: '#/components/schemas/recruiter'
+          '400':
+            description: Bad Request
+            content:
+              application/json:
+                schema:
+                #Error component referred
+                  $ref: '#/components/schemas/Error'
+          '401':
+            description: Authorization information is missing
+            content:
+              application/json:
+                schema:
+                #Error component referred
+                  $ref: '#/components/schemas/Error'
+   # to get the list of all recruiters
+      get:
+        summary: Get all recruiters
+        responses:
+          '200':
+            description: A list of all students
+            content:
+              application/json:
+                schema:
+                  type: array
+                  items:
+                    #recruiter component referred
+                    $ref: '#/components/schemas/recruiter'
+           
+          '400':
+            description: Bad Request
+            content:
+              application/json:
+                schema:
+                #Error component referred
+                  $ref: '#/components/schemas/Error'
+          '401':
+            description: Authorization information is missing
+            content:
+              application/json:
+                schema:
+                #Error component referred
+                  $ref: '#/components/schemas/Error'
+
+    #To get a recruiter details by specifing the id             
+  /recruiter/{recruiter_id}:
+      parameters:
+        - name: recruiter_id
+          in: path
+          required: true
+          description: The ID of the recruiter
+          schema:
+            type: string
+      #Get recruiter details
+      get:
+        summary: Get an recruiter by ID
+        responses:
+          '200':
+            description: The recruiter with the specified ID
+            content:
+              application/json:
+                schema:
+                #recruiter component referred
+                  $ref: '#/components/schemas/RecruiterUpdate'
+          '400':
+            description: Bad Request
+            content:
+              application/json:
+                schema:
+                #Error component referred
+                  $ref: '#/components/schemas/Error'
+          '401':
+            description: Authorization information is missing
+            content:
+              application/json:
+                schema:
+                #Error component referred
+                  $ref: '#/components/schemas/Error'
+      #Update recruiter details    
+      put:
+        summary: Update an recruiter by ID
+        requestBody:
+          required: true
+          content:
+            application/json:
+              schema:
+              #Error component referred
+                $ref: '#/components/schemas/RecruiterUpdate'
+        responses:
+          '200':
+            description: The updated recruiter
+            content:
+              application/json:
+                schema:
+                #Error component referred
+                  $ref: '#/components/schemas/RecruiterUpdate'
+          '400':
+            description: Bad Request
+            content:
+              application/json:
+                schema:
+                #Error component referred
+                  $ref: '#/components/schemas/Error'
+          '401':
+            description: Authorization information is missing
+            content:
+              application/json:
+                schema:
+                #Error component referred
+                  $ref: '#/components/schemas/Error'
+      #To delete a recruiter    
+      delete:
+        summary: Delete a recruiter by ID
+        responses:
+          '200':
+            description: Recruiter deleted successfullly
+            content:
+              application/json:
+                schema:
+                  type: object
+          '404':
+            description: "The recruiter with the specified ID was not found"
+            content:
+              application/json:
+                schema:
+                #Error component referred
+                  $ref: '#/components/schemas/Error'
+          '500':
+            description: "An error occurred while deleting the recruiter"
+            content:
+              application/json:
+                schema:
+                #Error component referred
+                  $ref: '#/components/schemas/Error'
+  /students:
+    #post method to add a recruiter 
+      post:
+        summary: Add a student
+        requestBody:
+          required: true
+          content:
+            application/json:
+              schema:
+               #student component referred
+                $ref: '#/components/schemas/Student'
+        responses:
+          '200':
+            description: The added student
+            content:
+              application/json:
+                schema:
+                 #student component referred
+                  $ref: '#/components/schemas/Student'
+          '400':
+            description: Bad Request
+            content:
+              application/json:
+                schema:
+                #Error component referred
+                  $ref: '#/components/schemas/Error'
+          '401':
+            description: Authorization information is missing
+            content:
+              application/json:
+                schema:
+                #Error component referred
+                  $ref: '#/components/schemas/Error'
+       # to get the list of all students            
+      get:
+        summary: Get all students
+        responses:
+          '200':
+            description: A list of all students
+            content:
+              application/json:
+                schema:
+                  type: array
+                  items:
+                   #student component referred
+                    $ref: '#/components/schemas/Student'
+          '400':
+            description: Bad Request
+            content:
+              application/json:
+                schema:
+                #Error component referred
+                  $ref: '#/components/schemas/Error'
+          '401':
+            description: Authorization information is missing
+            content:
+              application/json:
+                schema:
+                #Error component referred
+                  $ref: '#/components/schemas/Error'
+    #To get a student details by specifing the id               
+  /students/{student_id}:
+      parameters:
+        - name: student_id
+          in: path
+          required: true
+          description: The ID of the student
+          schema:
+            type: string
+      #Get student details
+      get:
+        summary: Get an student by ID
+        responses:
+          '200':
+            description: The student with the specified ID
+            content:
+              application/json:
+                schema:
+                 #student component referred
+                  $ref: '#/components/schemas/StudentUpdate'
+          '400':
+            description: Bad Request
+            content:
+              application/json:
+                schema:
+                #Error component referred
+                  $ref: '#/components/schemas/Error'
+          '401':
+            description: Authorization information is missing
+            content:
+              application/json:
+                schema:
+                #Error component referred
+                  $ref: '#/components/schemas/Error'
+      #Update student details   
+      put:
+        summary: Update an student by ID
+        requestBody:
+          required: true
+          content:
+            application/json:
+              schema:
+               #studentUpdate component referred
+                $ref: '#/components/schemas/StudentUpdate'
+        responses:
+          '200':
+            description: The updated student
+            content:
+              application/json:
+                schema:
+                #Error component referred
+                  $ref: '#/components/schemas/StudentUpdate'
+          '400':
+            description: Bad Request
+            content:
+              application/json:
+                schema:
+                  $ref: '#/components/schemas/Error'
+          '401':
+            description: Authorization information is missing
+            content:
+              application/json:
+                schema:
+                #Error component referred
+                  $ref: '#/components/schemas/Error'
+      #To delete a student       
+      delete:
+        summary: Delete a student by ID
+        responses:
+          '200':
+            description: Student deleted successfullly
+            content:
+              application/json:
+                schema:
+                  type: object
+          '404':
+            description: "The student with the specified ID was not found"
+            content:
+              application/json:
+                schema:
+                #Error component referred
+                  $ref: '#/components/schemas/Error'
+          '500':
+            description: "An error occurred while deleting the student"
+            content:
+              application/json:
+                schema:
+                #Error component referred
+                  $ref: '#/components/schemas/Error'
+components:
+    schemas:
+      jobs:
+        type: object
+        properties:
+          job_id:
+            type: integer
+            description: The ID of the job to update
+          job_status:
+            type: string
+            description: Job status if it's active or closed.
+          job_title:
+            type: string
+            description: The title of the job.
+          job_description:
+            type: string
+            description: The job description.
+          job_responsibilities:
+            type: string
+            description: Job responsibilities
+          job_type:
+            type: string
+            description: The category of the job if it's intern or full-time or part-time.
+          job_location:
+            type: string
+            description: The location of the job
+          job_salary:
+            type: number
+            description: The salary for the role.
+          job_category:
+            type: string
+            description: The category the job belongs to like software or business
+          job_deadline:
+            type: string
+            format: date
+            example: '2022-07-01'
+            description: Job deadline
+          recruiterId:
+            type: string
+            description: The id of the recruiter.
+          organization_id:
+            type: string
+            description: The organization to which the job belongs
+          job_post_date:
+            type: string
+            format: date
+            example: '2022-07-01'
+            description: Date in which the job was posted
+        required:
+          - job_id
+          - job_status
+          - job_title
+          - username
+          - job_description
+          - job_responsibilities
+          - job_type
+          - job_salary
+          - job_location
+          - job_deadline
+          - recruiterId
+          - organization_id
+      organizationUpdate:
+        type: object
+        properties:
+          organization_id:
+            type: integer
+            description: The ID of the organization to update
+          organizationName:
+            type: string
+            description: The name of the organization.
+          aboutUs:
+            type: string
+            description: The description of the organization.
+          sponsorship:
+            type: boolean
+            description:  of the student.
+        required:
+            - organization_id
+      updateJobs:
+        type: object
+        items:
+          properties:
+            job_id:
+              type: integer
+              description: The ID of the job to update
+            job_status:
+              type: string
+              description: Job status if it's active or closed.
+            job_title:
+              type: string
+              description: The title of the job.
+            job_description:
+              type: string
+              description: The job description.
+            job_responsibilities:
+              type: string
+              description: Job responsibilities
+            job_type:
+              type: string
+              description: The category of the job if it's intern or full-time or part-time.
+            job_location:
+              type: string
+              description: The location of the job
+            job_salary:
+              type: number
+              description: The salary for the role.
+            job_category:
+              type: string
+              description: The category the job belongs to like software or business
+            job_deadline:
+              type: string
+              format: date
+              example: '2022-07-01'
+              description: Job deadline
+            recruiterId:
+              type: string
+              description: The id of the recruiter.
+            organization_id:
+              type: string
+              description: The organization to which the job belongs
+            job_post_date:
+              type: string
+              format: date
+              example: '2022-07-01'
+              description: Date in which the job was posted
+          required:
+              - job_id
+      organization:
+        type: array
+        items:
+          properties:
+            organization_id:
+              type: integer
+              description: The ID of the organization to update
+            organizationName:
+              type: string
+              description: The name of the organization.
+            aboutUs:
+              type: string
+              description: The description of the organization.
+            sponsorship:
+              type: boolean
+              description:  of the student.
+          required:
+            - organization_id
+            - organizationName
+            - sponsorship
+      registration:
+        type: object
+        properties:
+          registrationId:
+            type: integer
+            example: 1
+          studentID:
+            type: integer
+            example: 1
+          registrationDate:
+            type: string
+            example: 13-03-2023
+          lastModifiedDate:
+            type: string
+            example: 13-03-2023
+    #Registrations array defined
+      registrations:
+        type: array
+        items:
+          properties:
+            registrationId:
+              type: integer
+              example: 1
+            studentID:
+              type: integer
+              example: 1
+            registrationDate:
+              type: string
+              example: 13-03-2023
+            lastModifiedDate:
+              type: string
+              example: 13-03-2023
+          required:
+            - registrationId
+            - studentID
+            - registrationDate
+            - lastModifiedDate
+      project:
+        type: object
+        properties:
+          projectID:
+            type: integer
+            example: 1
+          studentID:
+            type: integer
+            example: 1
+          projectName:
+            type: string
+            example: GoFit
+          location:
+            type: string
+            example: UK
+          endDate:
+            type: string
+            example: 13-03-2023
+          projectDescription:
+            type: string
+            example: A MERN stack application for applying to jobs
+    #Projects - Array
+      projects:
+        type: array
+        items:
+          properties:
+            projectID:
+              type: integer
+              example: 1
+            studentID:
+              type: integer
+              example: 1
+            projectName:
+              type: string
+              example: BloodDonationManagementSystem
+            location:
+              type: string
+              example: UK
+            endDate:
+              type: string
+              example: 13-03-2023
+            projectDescription:
+              type: string
+              example: A MERN stack application for applying to jobs
+          required:
+            - projectID
+            - studentID
+            - projectName
+            - location
+            - endDate
+            - projectDescription
+      Application:
+        type: object
+        properties:
+          id:
+            type: string
+            description: The application id of the student.
+          username:
+            type: string
+            description: The username of the student.
+            example: John.Doe
+          firstName:
+            type: string
+            description: The first name of the student.
+            example: John
+          lastName:
+            type: string
+            description: The last name of the student.
+            example: Doe
+          interests:
+            type: string
+            description: The interests of the student.
+            example: Software
+          gpa:
+            type: string
+            description: The gpa of the student.
+            example: 3.5
+          major:
+            type: string
+            description: The major of the student.
+            example: Computer Science
+          email:
+            type: string
+            description: The email of the student.
+            example: john.doe@example.com
+        required:
+          - id
+          - username
+          - fistName
+          - lastName
+          - interest
+          - gpa
+          - major
+          - email
+      recruiter:
+        type: array
+        items:
+          properties:
+            id:
+              type: string
+              description: The id of the recruiter.
+            username:
+              type: string
+              description: The username of the recruiter.
+              example: John.Doe
+            password:
+              type: string
+              description: The password of the recruiter.
+              example: John Doe
+            firstName:
+              type: string
+              description: The first name of the recruiter.
+              example: John 
+            lastName:
+              type: string
+              description: The last name of the recruiter.
+              example:  Doe
+            organization_id:
+              type: string
+              description: The organization_id of the recruiter.
+              example: test101
+            email:
+              type: string
+              description: The email of the recruiter.
+              example: john.doe@example.com
+        required:
+          - id
+          - username
+          - password
+          - fistName
+          - lastName
+          - organization_id
+          - email
+      #Recuiter object defined    
+      RecruiterUpdate:
+        type: object
+        properties:
+            id:
+              type: integer
+              description: The ID of the recruiter to update
+            username:
+              type: string
+              description: The username of the recruiter.
+              example: John.Doe
+            password:
+              type: string
+              description: The password of the recruiter.
+              example: John Doe
+            firstName:
+              type: string
+              description: The first name of the recruiter.
+              example: John 
+            lastName:
+              type: string
+              description: The last name of the recruiter.
+              example:  Doe
+            organization_id:
+              type: string
+              description: The organization_id of the recruiter.
+              example: test101
+            email:
+              type: string
+              description: The email of the recruiter.
+              example: john.doe@example.com
+        required:
+            - id
+      Student:
+        type: array
+        items:
+          properties:
+              id:
+                type: string
+                description: The id of the student.
+              username:
+                type: string
+                description: The username of the student.
+                example: John.Doe
+              password:
+                type: string
+                description: The password of the student.
+                example: John Doe
+              firstName:
+                type: string
+                description: The first name of the student.
+                example: John 
+              lastName:
+                type: string
+                description: The last name of the student.
+                example:  Doe
+              interests:
+                type: string
+                description: The interests of the student.
+                example: Tech
+              nuid:
+                type: string
+                description: The nuid of the student.
+                example: 002920718
+              gpa:
+                type: string
+                description: The gpa of the student.
+                example: 3.5
+              major:
+                type: string
+                description: The major of the student.
+                example: Computer Science
+              email:
+                type: string
+                description: The email of the student.
+                example: john.doe@example.com
+          required:
+            - id
+            - username
+            - password
+            - fistName
+            - lastName
+            - interest
+            - nuid
+            - gpa
+            - major
+            - email
+       #Student object defined
+      StudentUpdate:
+        type: object
+        properties:
+            id:
+              type: integer
+              description: The ID of the student to update
+            username:
+              type: string
+              description: The username of the student.
+              example: John.Doe
+            password:
+              type: string
+              description: The password of the student.
+              example: John Doe
+            firstName:
+              type: string
+              description: The first name of the student.
+              example: John 
+            lastName:
+              type: string
+              description: The last name of the student.
+              example:  Doe
+            interests:
+              type: string
+              description: The interests of the student.
+              example: Tech
+            nuid:
+              type: string
+              description: The nuid of the student.
+              example: 002920718
+            gpa:
+              type: string
+              description: The gpa of the student.
+              example: 3.5
+            major:
+              type: string
+              description: The major of the student.
+              example: Computer Science
+            email:
+              type: string
+              description: The email of the student.
+              example: john.doe@example.com
+        required:
+            - id
+      Error:
+         type: object
+         properties:
+            code:
+              type: integer
+              format: int32
+              example: 400
+            message:
+              type: string
+              example: Invalid input data

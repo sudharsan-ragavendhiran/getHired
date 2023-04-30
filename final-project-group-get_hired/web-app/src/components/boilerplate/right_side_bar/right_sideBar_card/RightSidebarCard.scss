@@ -1,0 +1,36 @@
+@import "../../../../scss/SassVariables.scss";
+
+.rightSidebarCard {
+  display: inline-block;
+  background-color: $base-color;
+  border-radius: 10px;
+  margin: 5px;
+}
+.card-profileData {
+  display: flex;
+  justify-content: space-around;
+}
+
+.profileImg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $white-color;
+  width: 60px;
+  height: 60px;
+  margin-top: 10px;
+  border-radius: 10px;
+}
+
+.profileText {
+  margin-top: 10px;
+}
+
+.profileName {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.card-review {
+  margin: 10px;
+}

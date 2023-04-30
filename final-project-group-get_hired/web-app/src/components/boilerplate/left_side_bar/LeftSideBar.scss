@@ -1,0 +1,12 @@
+@import "../../../scss/SassVariables.scss";
+
+.leftSideBar {
+  height: 100%;
+  background-color: $white-color;
+  box-shadow: 1px 1px 1px $space-grey-color;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow:scroll;
+}

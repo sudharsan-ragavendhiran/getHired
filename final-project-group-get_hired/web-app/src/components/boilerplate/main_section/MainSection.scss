@@ -1,0 +1,46 @@
+@import "../../../scss/SassVariables.scss";
+
+.mainSection {
+  width: 95%;
+  // height: 100vh;
+  margin: 0px 10px;
+  border-radius: 10px;
+  background-color: $white-color;
+  padding: 10px;
+}
+
+.mainSection-jobDetails {
+  display: flex;
+}
+
+.jobDetailsItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+}
+
+.jobDetailsTxt {
+  margin-left: 5px;
+  font-weight: bold;
+}
+
+.jobIcon {
+  width: 30px;
+  height: 30px;
+  border-radius: 30px;
+  background-color: $white-color;
+  color: $space-grey-color;
+  box-shadow: 2px 2px 2px $grey;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mainSection-title {
+  color: $blue-color;
+}
+
+.mainSection-skills-chips {
+  display: flex;
+}

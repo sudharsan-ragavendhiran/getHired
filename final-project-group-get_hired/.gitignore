@@ -1,0 +1,34 @@
+.DS_Store
+/web-app1
+/web-app2
+.DS_Store
+assets/.DS_Store
+
+/dist
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Dependency directories
+node_modules/
+
+# Build artifacts
+dist/
+build/
+
+# Configuration files
+*.env
+
+# IDE files
+.idea/
+*.iml
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# Optional flow cache
+.flowconfig

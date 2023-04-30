@@ -1,0 +1,42 @@
+@import "../../../scss/SassVariables.scss";
+
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+}
+
+.formInputs,
+.MuiFormControl-root-MuiTextField-root,
+.MuiInputBase-input-MuiOutlinedInput-input {
+  margin-top: 1rem;
+  width: 60%;
+  font-size: 2rem;
+}
+
+.formBtn,
+.MuiButton-root {
+  margin: 1rem;
+  background-color: $blue-color;
+  color: $white-color;
+  font-weight: bold;
+}
+
+.MuiButton-root:hover {
+  border: 1px solid $blue-color;
+  color: $blue-color;
+  background-color: $white-color;
+}
+
+.selectSection {
+  margin: 1rem auto;
+  width: 60%;
+}
+
+.selectInput {
+  width: 100%;
+  margin-top: 1rem;
+}

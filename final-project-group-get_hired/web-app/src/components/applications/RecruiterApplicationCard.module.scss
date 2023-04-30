@@ -1,0 +1,29 @@
+@import '../../scss/SassVariables.scss';
+
+.applicationCard {
+    margin: 0rem 0.5rem 0.5rem 1rem;
+    gap: 2px 2px;
+    width: 47%;
+}
+
+.cardContent {
+    display: flex;
+    justify-content: space-around;
+}
+
+.divider {
+    height: 1px;
+    background-color: lightgrey;
+  }
+
+.labels {
+    font-weight: bold;
+}
+
+.btn_resume {
+    background-color: $blue-color;
+    border-radius: 10px;
+    width: 100%;
+    height: 1.8rem;
+    color: $white-color;
+  }

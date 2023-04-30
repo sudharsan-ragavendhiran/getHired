@@ -1,0 +1,71 @@
+@import "../../scss/SassVariables.scss";
+
+.recruiterHeader {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 2rem;
+  align-items: center;
+}
+
+.recruiterProfileImg {
+  flex: 1;
+  margin: 0rem 1rem;
+  height: 18rem;
+  width: 4rem;
+  background: url("../../assets/ProfileAvatar.png");
+  object-fit: contain;
+  border-radius: 10px;
+}
+
+.recruiterDetails {
+  flex: 4;
+  margin-left: 1%;
+}
+
+.recruiterDetails > h3 {
+  font-size: 2.3rem;
+}
+
+.recruiterDetails > h5 {
+  font-size: 1.5rem;
+}
+.divTitle {
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem;
+}
+
+.divTitleText {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.divCardsContainer {
+  margin: 0rem 2rem;
+  height: 100%;
+  overflow-y: scroll;
+}
+
+.divTextDetails {
+  margin: 0rem 1rem;
+}
+
+.divClick {
+  overflow: hidden;
+  max-height: 100px;
+  transition: all 0.3s ease;
+}
+
+.divClickExpanded {
+  max-height: 100%;
+}
+
+.fileUpload input {
+  padding: 20px;
+}
+
+.formInputs {
+  margin-top: 1rem;
+  width: 60%;
+  font-size: 2rem;
+}
